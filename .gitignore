@@ -1,0 +1,6 @@
+
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+terraform_key.pem
+terraform_key.ppk
