@@ -2,25 +2,25 @@
 
 ## Infrastructure as Code
 
-### 실행
+### Execution
 
-* aws-provider.tf 파일을 열어 AWS계정의 access_key와 secret_key를 입력합니다
-* instance.tf 파일의 key_name에는 AWS에서 사용하는 ssh key 이름을 입력해 주세요
-* init 명령어로 terraform 준비합니다
+* Open the aws-provider.tf file and enter the access_key and secret_key of your AWS account.
+* Enter the ssh key name used by AWS in key_name of the instance.tf file.
+* Prepare terraform with the init command
 
 ```bash
 terraform init
 ```
 
-* apply 명령어로 코드로 작성한 AWS 인프라와 인스턴스를 만들어 줍니다
+* Create AWS infrastructure and instances written in code with the apply command
 
 ```bash
 terraform apply
 ```
 
-### 종료
+### end
 
-* terraform으로 만든 AWS 자원들을 한 번에 삭제할 수 있습니다
+* You can delete AWS resources created with terraform at once
 
 ```bash
 terraform destroy
