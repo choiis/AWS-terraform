@@ -19,7 +19,7 @@ terraform apply
 ```
 
 * When you run the command, the AWS structure and instance as shown in the figure below are created.
-![AWS](http://imageresizer-dev-serverlessdeploymentbucket-xapz1q6q9exe.s3-website-ap-northeast-1.amazonaws.com/gitpng/aws_diagram_v2.PNG)
+![AWS](http://imageresizer-dev-serverlessdeploymentbucket-xapz1q6q9exe.s3-website-ap-northeast-1.amazonaws.com/gitpng/aws_diagram_v3.png)
 
 ### end
 
