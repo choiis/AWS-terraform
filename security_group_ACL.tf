@@ -1,64 +1,4 @@
-resource "aws_security_group" "terra_security" {
-    name        = "terra_security"
-    description = "security group by terraform"
-    vpc_id      = aws_vpc.vpc.id
-
-    ingress {
-        from_port   = 0
-        to_port     = 65535
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    egress {
-        from_port   = 0
-        to_port     = 0
-        protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-}
-
-resource "aws_security_group" "terra_security_2" {
-    name        = "terra_security_2"
-    description = "security group by terraform 2"
-    vpc_id      = aws_vpc.vpc.id
-
-    ingress {
-        from_port   = 0
-        to_port     = 65535
-        protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    egress {
-        from_port   = 0
-        to_port     = 0
-        protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-}
-
-resource "aws_security_group" "db_security" {
-    name        = "db_security"
-    description = "db security group by terraform"
-    vpc_id      = aws_vpc.vpc.id
-
-    ingress {
-        from_port   = 0
-        to_port     = 65535
-        protocol    = "tcp"
-        cidr_blocks = ["180.71.20.47/32"]
-    }
-
-    egress {
-        from_port   = 0
-        to_port     = 0
-        protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-}
-
-// network acl for public subnets
+// network acl public subnets
 resource "aws_network_acl" "public_net_acl" {
   vpc_id = aws_vpc.vpc.id
   subnet_ids = [
@@ -156,8 +96,7 @@ resource "aws_network_acl_rule" "public_egress_ephemeral" {
   to_port = 65535
 }
 
-
-// network acl for private subnets
+// network acl private subnets
 resource "aws_network_acl" "private_net_acl" {
   vpc_id      = aws_vpc.vpc.id
   subnet_ids = [
