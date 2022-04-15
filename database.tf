@@ -12,7 +12,7 @@ resource "aws_db_instance" "mysql_rds" {
   username = "users"
   password = "12345678"
   db_subnet_group_name = "db_subnet_group"
-  vpc_security_group_ids = [aws_security_group.terra_security.id]
+  vpc_security_group_ids = [aws_security_group.db_security.id]
   publicly_accessible    = true
   skip_final_snapshot    = true
 }
