@@ -6,8 +6,8 @@ resource "aws_db_subnet_group" "db_subnet" {
 resource "aws_db_instance" "mysql_rds" {
   allocated_storage = 8
   engine = "mysql"
-  engine_version = "5.7.37"
-  instance_class = "db.t2.micro"
+  engine_version         = "8.0"
+  instance_class         = "db.t3.micro" 
   name = "mysql_rds"
   username = "users"
   password = "12345678"
