@@ -17,7 +17,7 @@ resource "aws_lb" "app_nlb" {
 }
 
 
-resource "aws_lb_target_group" "app_nlb_tg" {
+resource "aws_lb_target_group" "load_balancer_tg" {
   name        = "app-nlb-tg-80"
   port        = 80
   protocol    = "TCP"
@@ -45,7 +45,7 @@ resource "aws_lb_listener" "nlb_80" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.app_nlb_tg.arn
+    target_group_arn = aws_lb_target_group.load_balancer_tg.arn
   }
 }
 
@@ -59,7 +59,7 @@ resource "aws_lb_listener" "nlb_tls_443" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.app_nlb_tg.arn
+    target_group_arn = aws_lb_target_group.load_balancer_tg.arn
   }
 }
 
@@ -70,18 +70,18 @@ resource "aws_lb_listener" "nlb_8080" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.app_nlb_tg.arn
+    target_group_arn = aws_lb_target_group.load_balancer_tg.arn
   }
 }
 
-resource "aws_lb_target_group_attachment" "nlb_attach_aws_linux" {
-  target_group_arn = aws_lb_target_group.app_nlb_tg.arn
-  target_id        = aws_instance.ec2_private_aws_linux.id
-  port             = 80
-}
+#resource "aws_lb_target_group_attachment" "nlb_attach_aws_linux" {
+#  target_group_arn = aws_lb_target_group.load_balancer_tg.arn
+#  target_id        = aws_instance.ec2_private_aws_linux.id
+#  port             = 80
+#}
 
-resource "aws_lb_target_group_attachment" "nlb_attach_redhat" {
-  target_group_arn = aws_lb_target_group.app_nlb_tg.arn
-  target_id        = aws_instance.ec2_private_redhat.id
-  port             = 80
-}
+#resource "aws_lb_target_group_attachment" "nlb_attach_redhat" {
+#  target_group_arn = aws_lb_target_group.load_balancer_tg.arn
+#  target_id        = aws_instance.ec2_private_redhat.id
+#  port             = 80
+#}
