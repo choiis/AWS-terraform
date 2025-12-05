@@ -66,7 +66,7 @@ Network Load Balancer (80 / 443 / 8080)
 ```
 
 ## Architecture Diagram (draw.io)
-![AWS](http://imageresizer-dev-serverlessdeploymentbucket-xapz1q6q9exe.s3-website-ap-northeast-1.amazonaws.com/gitpng/aws_diagram_v5.PNG)
+![AWS](http://imageresizer-dev-serverlessdeploymentbucket-xapz1q6q9exe.s3-website-ap-northeast-1.amazonaws.com/gitpng/aws_diagram_v6.PNG)
 
 ## Repository Structure
 
