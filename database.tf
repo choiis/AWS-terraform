@@ -8,7 +8,7 @@ resource "aws_db_instance" "mysql_rds" {
   engine = "mysql"
   engine_version         = "8.0"
   instance_class         = "db.t3.micro" 
-  name = "mysql_rds"
+  db_name = "mysql_rds"
   username = "users"
   password = "12345678"
   db_subnet_group_name = "db_subnet_group"

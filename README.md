@@ -2,7 +2,7 @@
 # AWS Terraform Infrastructure
 
 This repository contains a fully automated, production-ready AWS infrastructure built using Terraform.  
-It includes VPC networking, subnets, NAT gateways, bastion host, application servers, Network Load Balancer (NLB), Route53 DNS, ACM TLS certificates, Redis, RDS MySQL, Auto Scaling Group (ASG), and more.
+It includes VPC networking, subnets, NAT gateways, bastion host, application servers, Network Load Balancer (NLB), Route53 DNS, ACM TLS certificates, Redis, RDS MySQL, Auto Scaling Group (ASG), S3 static hosting, CloudFront CDN and more.
 
 ## Architecture Overview
 
@@ -37,6 +37,10 @@ The Terraform code provisions:
 ### Databases
 - RDS MySQL
 - ElastiCache Redis (Redis 6.x)
+
+### Static Storage + CDN
+- S3 Bucket
+- CloudFront CDN
 
 ## Architecture Diagram (Conceptual)
 
@@ -82,9 +86,12 @@ AWS-terraform/
 ├── acm.tf
 ├── redis.tf
 ├── database.tf
+├── s3.tf
+├── cloudfront.tf
 ├── variables.tf
 ├── outputs.tf
 └── provider.tf
+
 ```
 
 ## Auto Scaling Behavior
@@ -98,7 +105,7 @@ AWS-terraform/
 
 ## Requirements
 
-- Terraform 1.3+
+- Terraform 1.6+
 - AWS Account
 - AWS CLI installed (`aws configure`)
 - SSH keypair named `terraform_key`

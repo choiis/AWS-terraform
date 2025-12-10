@@ -10,8 +10,8 @@ resource "aws_subnet" "private_subnet_1a" {
 
 # NAT elastic ip
 resource "aws_eip" "ngw_ip" {
-    vpc = true
-    depends_on = [aws_internet_gateway.igw]
+  domain = "vpc"   
+  depends_on = [aws_internet_gateway.igw]
 }
 
 # NAT Gateway 생성
